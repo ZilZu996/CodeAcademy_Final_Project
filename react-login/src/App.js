@@ -23,10 +23,11 @@ function App() {
       });
     } else {
       console.log("Details do not match");
+      setError("Email or password is incorrect!");
     }
   };
   const Logout = () => {
-    console.log("Logout");
+    setUser({ name: "", email: "" });
   };
 
   return (
@@ -34,14 +35,13 @@ function App() {
       {user.email != "" ? (
         <div className="welcome">
           <h2>
-            Wlcome, <span>{user.name}</span>
+            Welcome, <span>{user.name}</span>
           </h2>
-          <button>Logout</button>
+          <button onClick={Logout}>Logout</button>
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />
       )}
-      ;
     </div>
   );
 }
