@@ -34,10 +34,12 @@ function App() {
     <div className="App">
       {user.email != "" ? (
         <div className="welcome">
-          <h2>
+          <h2 className="welcome-text">
             Welcome, <span>{user.name}</span>
           </h2>
-          <button onClick={Logout}>Logout</button>
+          <button className="logcut" onClick={Logout}>
+            Logout
+          </button>
         </div>
       ) : (
         <LoginForm Login={Login} error={error} />
