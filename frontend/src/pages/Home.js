@@ -39,8 +39,9 @@ const Home = () => {
           <tr>
             <th style={{ textAlign: "center" }}>No.</th>
             <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Surname</th>
             <th style={{ textAlign: "center" }}>Email</th>
-            <th style={{ textAlign: "center" }}>Contact</th>
+            <th style={{ textAlign: "center" }}>Age</th>
             <th style={{ textAlign: "center" }}>Action</th>
           </tr>
         </thead>
@@ -51,8 +52,9 @@ const Home = () => {
                 <tr key={index}>
                   <th scope="row">{index + 1}</th>
                   <td>{item.name}</td>
+                  <td>{item.surname}</td>
                   <td>{item.email}</td>
-                  <td>{item.contact}</td>
+                  <td>{item.age}</td>
                   <td>
                     <Link to={`/update/${item.id}`}>
                       <button className="btn btn-edit">Edit</button>

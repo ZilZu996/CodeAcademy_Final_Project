@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./AddEdit.css";
 import { toast } from "react-toastify";
 
 const initialState = {
   name: "",
+  surname: "",
   email: "",
-  contact: "",
+  age: "",
 };
 
 const Sample = () => {
   const [state, setState] = useState(initialState);
 
-  const { name, email, contact } = initialState;
+  const { name, surname, email, age } = initialState;
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const addContact = async (data) => {
     const response = await axios.post("http://localhost:5000/user", data);
     if (response.status === 200) {
@@ -31,11 +32,11 @@ const Sample = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email || !contact) {
+    if (!name || !surname || !email || !age) {
       toast.error("Please provide value into each input field");
     } else {
       addContact(state);
-      history.push("/");
+      navigate("/");
     }
   };
 
@@ -59,24 +60,34 @@ const Sample = () => {
           onChange={handleInputChange}
           value={name}
         />
+        <label htmlFor="surname">Surname</label>
+        <input
+          type="text"
+          id="surname"
+          name="surname"
+          placeholder="Enter surname..."
+          value={surname}
+          onChange={handleInputChange}
+        />
         <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
           name="email"
-          placeholder="Your Email ..."
-          onChange={handleInputChange}
+          placeholder="Enter Email..."
           value={email}
+          onChange={handleInputChange}
         />
-        <label htmlFor="contact">Contact</label>
+        <label htmlFor="age">Age</label>
         <input
           type="number"
-          id="contact"
-          name="contact"
-          placeholder="Your Contact No. ..."
+          id="age"
+          name="age"
+          placeholder="Enter your age. ..."
+          value={age}
           onChange={handleInputChange}
-          value={contact}
         />
+
         <input type="submit" value="Add" />
       </form>
     </div>

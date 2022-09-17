@@ -27,6 +27,6 @@ export const updateUser = (req, res) => {
   user.name = req.body.name;
   user.surname = req.body.surname;
   user.email = req.body.email;
-  user.birthday = req.body.birthday;
+  user.age = req.body.age;
   res.send("User updated!");
 };

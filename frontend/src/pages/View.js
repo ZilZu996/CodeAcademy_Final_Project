@@ -38,12 +38,16 @@ const View = () => {
           <span>{user && user.name} </span>
           <br />
           <br />
+          <strong>Surname: </strong>
+          <span>{user && user.surname} </span>
+          <br />
+          <br />
           <strong>Email: </strong>
           <span>{user && user.email} </span>
           <br />
           <br />
-          <strong>Contact: </strong>
-          <span>{user && user.contact} </span>
+          <strong>Age: </strong>
+          <span>{user && user.age} </span>
           <br />
           <br />
           <Link to="/">

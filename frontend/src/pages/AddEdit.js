@@ -6,13 +6,14 @@ import axios from "axios";
 
 const initialState = {
   name: "",
+  surname: "",
   email: "",
-  contact: "",
+  age: "",
 };
 
 const AddEdit = () => {
   const [state, setState] = useState(initialState);
-  const { name, email, contact } = state;
+  const { name, surname, email, age } = state;
 
   const navigate = useNavigate();
 
@@ -55,7 +56,7 @@ const AddEdit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email || !contact) {
+    if (!name || !surname || !email || !age) {
       toast.error("Please provide value in each input field");
     } else {
       if (!id) {
@@ -88,6 +89,16 @@ const AddEdit = () => {
           onChange={handleInputChange}
         />
 
+        <label htmlFor="surname">Surname</label>
+        <input
+          type="text"
+          id="surname"
+          name="surname"
+          placeholder="Enter surname..."
+          value={surname}
+          onChange={handleInputChange}
+        />
+
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -98,13 +109,13 @@ const AddEdit = () => {
           onChange={handleInputChange}
         />
 
-        <label htmlFor="contact">Contact</label>
+        <label htmlFor="age">Age</label>
         <input
           type="number"
-          id="contact"
-          name="contact"
-          placeholder="Enter Contact No. ..."
-          value={contact}
+          id="age"
+          name="age"
+          placeholder="Enter your age. ..."
+          value={age}
           onChange={handleInputChange}
         />
 
