@@ -65,7 +65,7 @@ const AddEdit = () => {
         updateUser(state, id);
       }
 
-      setTimeout(() => navigate("/"), 500);
+      setTimeout(() => navigate("/home"), 500);
     }
   };
   return (

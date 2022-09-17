@@ -20,7 +20,7 @@ const Header = () => {
     <div className="header">
       <p className="logo">Renginių organizavimas</p>
       <div className="header-right">
-        <Link to="/">
+        <Link to="/home">
           <p
             className={`${activeTab === "Home" ? "active" : ""}`}
             onClick={() => setActiveTab("Home")}
