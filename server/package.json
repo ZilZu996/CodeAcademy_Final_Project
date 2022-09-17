@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js",
-    "start": "node index.js"
+    "client": "cd.. && cd frontend && npm start",
+    "dev": "concurrently \"node index.js\" \"npm run client\""
   },
   "repository": {
     "type": "git",
