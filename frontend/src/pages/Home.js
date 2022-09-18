@@ -12,7 +12,7 @@ const Home = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/users");
+    const response = await axios.get("http://localhost:8080/users");
     if (response.status === 200) {
       setData(response.data);
     }
@@ -22,7 +22,7 @@ const Home = () => {
     if (
       window.confirm("Are you sure that you wanted to delete that user record")
     ) {
-      const response = await axios.delete(`http://localhost:5000/user/${id}`);
+      const response = await axios.delete(`http://localhost:8080/user/${id}`);
       if (response.status === 200) {
         toast.success(response.data);
         getUsers();
@@ -30,10 +30,8 @@ const Home = () => {
     }
   };
 
-  console.log("data=>", data);
-
   return (
-    <div style={{ marginTop: "150px" }}>
+    <div>
       <table className="styled-table">
         <thead>
           <tr>

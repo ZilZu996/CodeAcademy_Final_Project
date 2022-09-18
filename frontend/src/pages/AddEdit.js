@@ -26,7 +26,7 @@ const AddEdit = () => {
   }, [id]);
 
   const getSingleUser = async (id) => {
-    const response = await axios.get(`http://localhost:5000/user/${id}`);
+    const response = await axios.get(`http://localhost:8080/user/${id}`);
     if (response.status === 200) {
       setState({ ...response.data[0] });
     }
@@ -41,14 +41,14 @@ const AddEdit = () => {
   };
 
   const addUser = async (data) => {
-    const response = await axios.post("http://localhost:5000/user", data);
+    const response = await axios.post("http://localhost:8080/user", data);
     if (response.status === 200) {
       toast.success(response.data);
     }
   };
 
   const updateUser = async (data, id) => {
-    const response = await axios.put(`http://localhost:5000/user/${id}`, data);
+    const response = await axios.put(`http://localhost:8080/user/${id}`, data);
     if (response.status === 200) {
       toast.success(response.data);
     }
@@ -69,12 +69,12 @@ const AddEdit = () => {
     }
   };
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div className="add-edit-form">
       <form
         style={{
           margin: "auto",
           padding: "15px",
-          maxWidth: "400px",
+          maxWidth: "450px",
           alignContent: "center",
         }}
         onSubmit={handleSubmit}
@@ -84,7 +84,7 @@ const AddEdit = () => {
           type="text"
           id="name"
           name="name"
-          placeholder="Enter Name..."
+          placeholder="Client name..."
           value={name}
           onChange={handleInputChange}
         />
@@ -94,7 +94,7 @@ const AddEdit = () => {
           type="text"
           id="surname"
           name="surname"
-          placeholder="Enter surname..."
+          placeholder="Client surname..."
           value={surname}
           onChange={handleInputChange}
         />
@@ -104,7 +104,7 @@ const AddEdit = () => {
           type="email"
           id="email"
           name="email"
-          placeholder="Enter Email..."
+          placeholder="Client email..."
           value={email}
           onChange={handleInputChange}
         />
@@ -114,12 +114,12 @@ const AddEdit = () => {
           type="number"
           id="age"
           name="age"
-          placeholder="Enter your age. ..."
+          placeholder="Client age..."
           value={age}
           onChange={handleInputChange}
         />
 
-        <input type="submit" value={id ? "Update" : "Add"} />
+        <input type="submit" value={id ? "UPDATE" : "ADD"} />
       </form>
     </div>
   );

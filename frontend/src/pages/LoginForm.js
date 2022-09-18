@@ -1,16 +1,38 @@
 import React, { useState } from "react";
-function LoginForm({ Login, error }) {
+import { useNavigate } from "react-router-dom";
+import "./LoginForm.css";
+
+function LoginForm() {
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
   const [details, setDetails] = useState({ email: "", password: "" });
+
+  const adminUser = {
+    email: "zilvinas.zube@admin.com",
+    password: "codeacademy",
+  };
+
+  const login = () => {
+    if (
+      details.email === adminUser.email &&
+      details.password === adminUser.password
+    ) {
+      navigate("/home");
+    } else {
+      console.log("Details do not match");
+      setError("Email or password is incorrect!");
+    }
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    Login(details);
+    login();
   };
 
   return (
     <form onSubmit={submitHandler}>
       <div className="form-inner">
-        <h2>Login in!</h2>
+        <h2>Login!</h2>
         {error !== "" ? <div className="error">{error}</div> : ""}
         <div className="form-group">
           <label htmlFor="email">Email:</label>

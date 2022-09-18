@@ -3,25 +3,49 @@ input[type="email"],
 input[type="number"],
 select {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 15px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid black;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
 input[type="submit"] {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #c5b69c;
   width: 100%;
-  background-color: #ccac6c;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
+  font-weight: 600;
   cursor: pointer;
+  margin-top: 12px;
+  border: 1px solid black;
+}
+.add-edit-form {
+  margin-top: 150px;
 }
 
-input[type="submit"]:hover {
-  background-color: #45a049;
+@media screen and (max-width: 1000px) {
+  .add-edit-form {
+    margin-top: 125px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .add-edit-form {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .add-edit-form {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  form input {
+    font-size: 12px;
+  }
+  form label {
+    font-size: 14px;
+  }
 }

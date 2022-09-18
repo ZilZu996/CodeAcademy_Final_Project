@@ -2,15 +2,8 @@
   border-collapse: collapse;
   margin: auto;
   font-size: 0.9em;
-  font-family: sans-serif;
-  max-width: 800px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-  background-color: #327f87;
-  color: #ffffff;
-  text-align: left;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  margin-top: 150px;
 }
 
 .styled-table th,
@@ -18,24 +11,17 @@
   padding: 12px 15px;
 }
 
+thead tr th {
+  background-color: #c5b69caf;
+}
+
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
 .btn {
-  border: none;
-  color: white;
   padding: 5px 8px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   border-radius: 5px;
   font-size: 16px;
@@ -43,15 +29,68 @@
   cursor: pointer;
 }
 
-.btn-edit {
-  background-color: #81a135;
-}
-
+.btn-edit,
+.btn-view,
 .btn-delete {
-  background-color: #f44336;
+  background-color: #c5b69c7a;
+  color: black;
+  border: 1px solid black;
+  margin-left: 5px;
 }
 
-.btn-view {
-  background-color: #9ed9db;
-  color: black;
+@media screen and (max-width: 1000px) {
+  .styled-table {
+    font-size: 0.85em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .styled-table {
+    font-size: 0.8em;
+  }
+  .btn {
+    padding: 4px 5px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .styled-table {
+    font-size: 0.8em;
+    margin-top: 10em;
+  }
+  .btn {
+    font-size: 1.2em;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 10px 8px;
+  }
+  .styled-table {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .btn {
+    font-size: 0.8em;
+    width: 100%;
+    margin-left: 0;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 8px 6px;
+  }
+  td a {
+    display: flex;
+  }
+}
+@media screen and (max-width: 450px) {
+  .styled-table {
+    font-size: 0.6em;
+    margin-top: 8em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .styled-table {
+    font-size: 0.55em;
+  }
 }

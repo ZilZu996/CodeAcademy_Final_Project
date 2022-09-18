@@ -17,7 +17,7 @@ const View = () => {
   console.log("user", id);
 
   const getSingleUser = async (id) => {
-    const response = await axios.get(`http://localhost:5000/user/${id}`);
+    const response = await axios.get(`http://localhost:8080/user/${id}`);
     console.log("response", response);
     if (response.status === 200) {
       setUser({ ...response.data[0] });
@@ -51,7 +51,7 @@ const View = () => {
           <br />
           <br />
           <Link to="/home">
-            <button className="btn btn-edit">Go Back</button>
+            <button className="btn-back">Go Back</button>
           </Link>
         </div>
       </div>

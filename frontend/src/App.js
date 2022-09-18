@@ -4,7 +4,6 @@ import "./App.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LoginForm from "./pages/LoginForm";
-import About from "./pages/About";
 import AddEdit from "./pages/AddEdit";
 import Home from "./pages/Home";
 import View from "./pages/View";
@@ -22,8 +21,15 @@ function App() {
           <Route path="/add" element={<AddEdit />} />
           <Route path="/update/:id" element={<AddEdit />} />
           <Route path="/view/:id" element={<View />} />
-          <Route path="/about" element={<About />} />
         </Route>
+        <Route
+          path="*"
+          element={
+            <div style={{ textAlign: "center", fontSize: "36px" }}>
+              This page does not exist. Please check your link!
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
